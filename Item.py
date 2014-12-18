@@ -1,4 +1,4 @@
-# v 0.1  __18/12/2014___
+# v 0.2  __18/12/2014___
 # buffalo
 # brouillon et essai github
 
@@ -11,6 +11,7 @@ class Item():
 
 	    def __init__(self, description=''):
 		self.description = description
+		self.name = None
 		self.typeItem = None # ===> Vivres = aliment / boisson ; arme ; protection ; ecritures ;  materiel craftable ; artefact
 		# courte lame par défaut
 		
@@ -115,6 +116,70 @@ class Ecriture(Item):
 
 	    def __init__(self, description=''):
 		self.description = description
+		self.titre = None
+		
+		
+    def get_description(self):
+        return description
+
+		
+class Livre(Ecriture):
+
+	    def __init__(self, description=''):
+		self.description = description
+		self.contenu = None
+		self.TimeForReading = None # Nombre de tour pour livre un livre et donc augmenter son savoir, ne pas lire quand on est poursuivi par des monstres !
+		self.SavoirBonus = None # Un tres bon livre est leger, rapide a lire, et offre un max de points de savoir ; le contre exemple est un annuaire telephonique. 
+		
+    def get_description(self):
+        return description
+
+		
+class Grimoire(Ecriture):
+
+	    def __init__(self, description=''):
+		self.description = description
+		self.EcoleMagique = None
+		self.Sortilege = None
+		self.RequiredSavoir = None
+		self.RequiredMana = None
+		
+		
+    def get_description(self):
+        return description
+
+		
+		
+class Parchemin(Ecriture):
+
+	    def __init__(self, description=''):
+		self.description = description
+		self.Incantation = None
+		
+		
+    def get_description(self):
+        return description
+
+# ===============================================================================    Objets  simples   ===================================================================
+
+class SimpleObjet(Item):
+
+	    def __init__(self, description=''):
+		self.description = description
+		# self.type = None
+		
+		
+		
+    def get_description(self):
+        return description
+
+# ===============================================================================    Objets  complexe   ===================================================================
+
+class ComplexObjet(Item):
+
+	    def __init__(self, description=''):
+		self.description = description
+		# self.type = None
 		
 		
 		
